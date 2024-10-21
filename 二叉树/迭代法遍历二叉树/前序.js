@@ -6,7 +6,7 @@ function fn(root, res = []) {
     root && stack.push(root);
     while(stack.length){
         const node = stack.pop();
-        if(!node){
+        if(node === null){
             res.push(stack.pop().val);
             continue;
         }
