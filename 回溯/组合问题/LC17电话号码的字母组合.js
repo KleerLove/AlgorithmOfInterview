@@ -5,18 +5,18 @@ var letterCombinations = function (digits) {
 
     const result = []; 
     const path = [];
-    function backtracking(digi, i) {
+    function backtracking(i) {
         if (path.length === len) {
             result.push(path.join(''));
             return;
         }
-        const number = digi[i];
+        const number = digits[i];
         for (const v of arr[number]) {
             path.push(v);
-            backtracking(digi, i + 1);
+            backtracking(i + 1);
             path.pop();
         }
     }
-    backtracking(digits, 0);
+    backtracking(0);
     return result;
 };

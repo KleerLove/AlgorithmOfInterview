@@ -12,14 +12,14 @@ var partition = function(s) {
     const ans = [];
     const path = [];
 
-    function dfs(i) {
-        if (i === len) {
+    function dfs(start) {
+        if (start === len) {
             ans.push([...path]); // 复制 path
             return;
         }
-        for (let j = i; j < len; j++) { // 枚举子串的结束位置
-            if (isPalindrome(s, i, j)) {
-                path.push(s.substring(i, j + 1));
+        for (let j = start; j < len; j++) { // 枚举子串的结束位置
+            if (isPalindrome(s, start, j)) {
+                path.push(s.substring(start, j + 1));
                 dfs(j + 1);
                 path.pop(); // 恢复现场
             }
