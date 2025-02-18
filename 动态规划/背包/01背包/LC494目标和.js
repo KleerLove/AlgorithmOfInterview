@@ -4,6 +4,8 @@
 // x = (target + sum) / 2
 // 此时问题就转化为，用nums装满容量为x的背包，有几种方法。
 
+// 装满背包有几种方法，二维DP数组的递推公式： dp[i][j] = dp[i - 1][j] + dp[i - 1][j - nums[i]]
+
 const findTargetSumWays0 = (nums, target) => {
 
     const sum = nums.reduce((acc, cur) => acc + cur);

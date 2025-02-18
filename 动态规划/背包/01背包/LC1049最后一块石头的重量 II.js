@@ -7,10 +7,12 @@ var lastStoneWeightII = function(stones) {
     const sum = stones.reduce((acc, cur) => acc + cur);
     const dpLen = Math.floor(sum / 2); // 避免出现浮点数
     const dp = new Array(dpLen + 1).fill(0);
+
     for(let i = 0; i < stones.length; i++){
         for(let j = dpLen; j >= stones[i]; j--){
             dp[j] = Math.max(dp[j], dp[j - stones[i]] + stones[i]);
         }
     }
+
     return Math.abs((sum - dp[dpLen]) - dp[dpLen]);
 };
