@@ -8,8 +8,8 @@ var maxProfit = function (prices, fee) {
     for (let i = 1; i < len; i++) {
         // 更新dp[i]
         dp[i] = [
-            Math.max(dp[i - 1][0], dp[i - 1][1] - prices[i]), // 不持股
-            Math.max(dp[i - 1][1], prices[i] + dp[i - 1][0] - fee), // 持股
+            Math.max(dp[i - 1][0], dp[i - 1][1] - prices[i]), // 持股
+            Math.max(dp[i - 1][1], prices[i] + dp[i - 1][0] - fee), // 不持股
         ];
     }
     return dp[len - 1][1];
