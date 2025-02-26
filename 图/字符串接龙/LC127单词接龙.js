@@ -15,7 +15,7 @@ function findTransformationPath(oldName, newName, candidates) {
         return diffCount === 1;
     }
 
-    // 宽度优先搜索（BFS）来寻找转换路径
+    // 广度优先搜索（BFS）来寻找转换路径
     function bfs(start, target, candidatesSet) {
         let queue = [[start]]; // 存储路径
         let visited = new Set();
